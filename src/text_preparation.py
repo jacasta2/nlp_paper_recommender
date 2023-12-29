@@ -11,6 +11,7 @@ import nltk
 nltk.download("stopwords")
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
 
 
 def nlp_preparation(abstract: str) -> str:
@@ -39,18 +40,22 @@ def nlp_preparation(abstract: str) -> str:
 
     # Get list of English stopwords
     english_stopwords = stopwords.words("english")
+
+    # Tokenize text
+    tokens = word_tokenize(prepared_abstract)
+
     # Remove stopwords
-    prepared_abstract = " ".join(
-        [word for word in prepared_abstract.split() if word not in english_stopwords]
-    )
+    text_clean = [word for word in tokens if word not in english_stopwords]
+    # prepared_abstract = " ".join(
+    #     [word for word in prepared_abstract.split() if word not in english_stopwords]
+    # )
 
     # Lemmatizer object
     lemmatizer = WordNetLemmatizer()
     # Lemmatization on all rows
-    prepared_abstract = " ".join(
-        lemmatizer.lemmatize(word) for word in prepared_abstract.split()
-    )
-
-    return prepared_abstract
+    # prepared_abstract = " ".join(
+    #     lemmatizer.lemmatize(word) for word in prepared_abstract.split()
+    # )
+    prepared_abstract = " ".join(lemmatizer.lemmatize(word) for word in text_clean)
 
     return prepared_abstract
