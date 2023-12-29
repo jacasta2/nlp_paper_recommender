@@ -1,0 +1,11 @@
+ipykernel --group dev
+ipywidgets --group dev 
+pandas
+requests
+elsapy
+scikit-learn
+nltk
+mittens
+pinecone-client
+langchain
+streamlit
