@@ -6,6 +6,9 @@ text_preparation.py
 import re
 import string
 
+import nltk
+
+nltk.download("stopwords")
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
@@ -47,5 +50,7 @@ def nlp_preparation(abstract: str) -> str:
     prepared_abstract = " ".join(
         lemmatizer.lemmatize(word) for word in prepared_abstract.split()
     )
+
+    return prepared_abstract
 
     return prepared_abstract
