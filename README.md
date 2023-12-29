@@ -8,7 +8,7 @@ This repo provides the code of a `Streamlit` app that:
 4. connects to a `Pinecone` index (i.e., vector database) containing vector embeddings of abstracts from BeOps papers, and
 5. finds what abstracts are the most similar to her input.
 
-The app is available at [nba-analysis-jaime.streamlit.app](https://nba-analysis-jaime.streamlit.app/). At the moment of deployment, the `Pinecone` index contains vector embeddings from 282 abstracts. The embeddigns were generated using a `TF-IDF` vectorizer with dimension equal to 128 using unigrams and bigrams. The papers were retrieved in late October using the `Scopus Search API` with the following search terms:
+The app is available at [beops-paper-recommender-jaime.streamlit.app](https://beops-paper-recommender-jaime.streamlit.app/). At the moment of deployment, the `Pinecone` index contains vector embeddings from 282 abstracts. The embeddigns were generated using a `TF-IDF` vectorizer with dimension equal to 128 using unigrams and bigrams. The papers were retrieved in late October using the `Scopus Search API` with the following search terms:
 
 ```python
 KEY = "\"behavio*ral operations\""

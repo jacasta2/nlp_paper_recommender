@@ -169,6 +169,7 @@ cython_debug/
 /notebooks/query.xlsx
 /notebooks/test.csv
 /notebooks/test.ipynb
+/old_requirements/
 /src/.streamlit/secrets.toml
 app_flow.xlsx
 pyproject.toml
