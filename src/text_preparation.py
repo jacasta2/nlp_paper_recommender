@@ -6,9 +6,6 @@ text_preparation.py
 import re
 import string
 
-import nltk
-
-nltk.download("stopwords")
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize

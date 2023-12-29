@@ -3,8 +3,11 @@ streamlit_app.py
     This script contains the app's frontend. 
 """
 
+import nltk
 import pandas as pd
 import streamlit as st
+
+nltk.download("stopwords")
 
 from load_data import load_scopus_data
 from load_vectorizer import load_tfidf_vectorizer
