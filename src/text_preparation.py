@@ -1,6 +1,6 @@
 """
 text_preparation.py
-    This script contains all supportinhg functions to prepare text data.
+    This script contains all supporting functions to prepare text data.
 """
 
 import re
@@ -50,11 +50,10 @@ def nlp_preparation(abstract: str) -> str:
 
     # Lemmatizer object
     lemmatizer = WordNetLemmatizer()
-    # Lemmatization on all rows
+    # Lemmatization on all words
+    # prepared_abstract = " ".join(lemmatizer.lemmatize(word) for word in text_clean)
     prepared_abstract = " ".join(
         lemmatizer.lemmatize(word) for word in prepared_abstract.split()
     )
-    # prepared_abstract = " ".join(lemmatizer.lemmatize(word) for word in text_clean)
 
-    return prepared_abstract
     return prepared_abstract
