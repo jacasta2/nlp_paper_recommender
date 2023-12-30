@@ -4,6 +4,7 @@ load_data.py
 """
 
 import ast
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -131,11 +132,24 @@ def load_scopus_data() -> pd.DataFrame:
         data: pd.DataFrame with prepared papers' data.
     """
 
-    # Instantiate a Path object pointing to the project's root
-    data_path = Path(Path.cwd().parent)
+    # Path for local development
+    if "DS_Projects" in os.getcwd():
 
-    # Modify the object to point to the scopus data
-    data_path = data_path.joinpath('data', 'beops_papers.csv')
+        # Instantiate a Path object pointing to the project's root
+        data_path = Path(Path.cwd().parent)
+
+        # Modify the object to point to the scopus data
+        data_path = data_path.joinpath('data', 'beops_papers.csv')
+
+        # Load scopus data from papers
+        data = pd.read_csv(data_path, index_col=0)
+
+        # Prepare data
+        data = clean_df(data)
+        return data
+
+    # Path for Streamlit deployment
+    data_path = os.getcwd() + "/data/beops_papers.csv"
 
     # Load scopus data from papers
     data = pd.read_csv(data_path, index_col=0)

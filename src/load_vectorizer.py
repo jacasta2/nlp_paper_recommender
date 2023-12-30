@@ -30,11 +30,10 @@ def load_tfidf_vectorizer() -> TfidfVectorizer:
         # Load vectorizer
         model = joblib.load(model_path)
         return model
-    
-    # Path for Streamlit deployment
-    else:
-       model_path = os.getcwd() + "/models/tfidf_model.joblib"
 
-       # Load vectorizer
-       model = joblib.load(model_path)
-       return model
+    # Path for Streamlit deployment
+    model_path = os.getcwd() + "/models/tfidf_model.joblib"
+
+    # Load vectorizer
+    model = joblib.load(model_path)
+    return model
