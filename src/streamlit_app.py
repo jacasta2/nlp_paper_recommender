@@ -8,6 +8,7 @@ import pandas as pd
 import streamlit as st
 
 nltk.download("stopwords")
+# nltk.download("punkt")
 
 from load_data import load_scopus_data
 from load_vectorizer import load_tfidf_vectorizer
