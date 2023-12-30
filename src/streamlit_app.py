@@ -8,6 +8,7 @@ import pandas as pd
 import streamlit as st
 
 nltk.download("stopwords")
+nltk.download("wordnet")
 # nltk.download("punkt")
 
 from load_data import load_scopus_data
