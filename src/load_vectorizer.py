@@ -3,7 +3,7 @@ load_vectorizer.py
     This script contains all supportinhg functions to load a vectorizer.
 """
 
-import os
+import os  # Needed to bypass path issues with Streamlit
 from pathlib import Path
 
 import joblib
@@ -21,6 +21,7 @@ def load_tfidf_vectorizer() -> TfidfVectorizer:
 
     # Path for local development
     if "DS_Projects" in os.getcwd():
+
         # Instantiate a Path object pointing to the project's root
         model_path = Path(Path.cwd().parent)
 

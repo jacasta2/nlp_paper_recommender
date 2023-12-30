@@ -3,13 +3,14 @@ streamlit_app.py
     This script contains the app's frontend. 
 """
 
-import nltk
+import nltk  # Necessary to avoid Streamlit issues
 import pandas as pd
 import streamlit as st
 
-nltk.download("stopwords")
-nltk.download("wordnet")
-# nltk.download("punkt")
+nltk.download("stopwords") # Necessary to avoid Streamlit issues
+nltk.download("wordnet") # Necessary to avoid Streamlit issues
+# nltk.download("punkt") # Needed if working with NLTK word tokenizer. Not sure if more
+# nltk downloads were going to be necessary if working with its tokenizer
 
 from load_data import load_scopus_data
 from load_vectorizer import load_tfidf_vectorizer
