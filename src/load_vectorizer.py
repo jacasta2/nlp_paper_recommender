@@ -3,6 +3,7 @@ load_vectorizer.py
     This script contains all supportinhg functions to load a vectorizer.
 """
 
+import os
 from pathlib import Path
 
 import joblib
@@ -18,12 +19,22 @@ def load_tfidf_vectorizer() -> TfidfVectorizer:
         model: TfidfVectorizer.
     """
 
-    # Instantiate a Path object pointing to the project's root
-    model_path = Path(Path.cwd().parent)
+    # Path for local development
+    if "DS_Projects" in os.getcwd():
+        # Instantiate a Path object pointing to the project's root
+        model_path = Path(Path.cwd().parent)
 
-    # Modify the object to point to the TF-IDF vectorizer
-    model_path = model_path.joinpath("models", "tfidf_model.joblib")
+        # Modify the object to point to the TF-IDF vectorizer
+        model_path = model_path.joinpath("models", "tfidf_model.joblib")
 
-    # Load vectorizer
-    model = joblib.load(model_path)
-    return model
+        # Load vectorizer
+        model = joblib.load(model_path)
+        return model
+    
+    # Path for Streamlit deployment
+    else:
+       model_path = os.getcwd() + "/models/tfidf_model.joblib"
+
+       # Load vectorizer
+       model = joblib.load(model_path)
+       return model
