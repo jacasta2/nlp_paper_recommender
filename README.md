@@ -1,4 +1,4 @@
-# NLP recommender of Behavioral Operations papers
+# NLP paper recommender: text processing, vector embeddings and vector database
 
 This repo provides the code of a `Streamlit` app that:
 
@@ -67,7 +67,7 @@ The interface with the final results looks like shown in Figure 2:
 
 ### text_preparation.py
 
-This script contains code that prepares the user input following common NLP tasks. Specifically, the code removes punctuation, lower cases the text, removes stopwords and lemmatizes the abstract. A specific step for this project is replacing hyphens, en-dashes and em-dashes with a blank space, which is performed before the other tasks.
+This script contains code that prepares the user input following common text processing tasks. Specifically, the code removes punctuation, lower cases the text, removes stopwords and lemmatizes the abstract. A specific step for this project is replacing hyphens, en-dashes and em-dashes with a blank space, which is performed before the other tasks.
 
 ### load_vectorizer.py
 
@@ -106,7 +106,7 @@ This is the first deployed version of the app. Several things I'm currently work
 - **Use feature store for papers' data:** currently, papers' data are stored in a CSV file. While the amount of papers is relatively small, which makes the use of a CSV file more than enough, I plan to use a feature store to keep up to date with machine learning engineering practices.
 - **Update papers database:** recall the current paper count is 282 papers. I plan to automate the use of the `Scopus Search API` to update the papers database with a given periodicity (e.g., once per month). This would also require to update the feature store every time the `Scopus Search API` is used (the local development using notebooks provides several examples of the use of this API). Moreover, the current search terms miss some relevant literature (e.g., several papers on the bullwhip effect). Thus, I also need to work on the search terms to not miss this literature.
 - **Update vectorization**: as the amount of papers grows, the vector embeddigns should be revised. For example, in the current version, the vectors' dimension is 128 using unigrams and bigrams, which doesn't allow to capture some bigrams with particular BeOps concepts or ideas like *newsvendor model* and *bullwhip effect*. This would also require to update the `Pinecone` index. Moreover, I plan to enable an option to allow the user to choose between a `TF-IDF` and a `GloVe` vectorizer (the local development using notebooks provides an example of the use of a `GloVe` vectorizer).
-- **Improve frontend:** The current frontend is simple since I wanted to deploy a minimum viable product using core features such as vector embeddigns and a vector database. I plan to improve the frontend by formatting results as a table and allowing some basic filtering (e.g., by journal).  
+- **Improve frontend:** the current frontend is simple since I wanted to deploy a minimum viable product using core features such as vector embeddings and a vector database. I plan to improve the frontend by formatting results as a table and allowing some basic filtering (e.g., by journal).  
 
 ## Credits
 
