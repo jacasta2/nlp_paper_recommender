@@ -23,7 +23,7 @@ def load_tfidf_vectorizer() -> TfidfVectorizer:
     if "DS_Projects" in os.getcwd():
 
         # Instantiate a Path object pointing to the project's root
-        model_path = Path(Path.cwd().parent)
+        model_path = Path(Path.cwd())
 
         # Modify the object to point to the TF-IDF vectorizer
         model_path = model_path.joinpath("models", "tfidf_model.joblib")

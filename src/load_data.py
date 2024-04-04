@@ -136,7 +136,7 @@ def load_scopus_data() -> pd.DataFrame:
     if "DS_Projects" in os.getcwd():
 
         # Instantiate a Path object pointing to the project's root
-        data_path = Path(Path.cwd().parent)
+        data_path = Path(Path.cwd())
 
         # Modify the object to point to the scopus data
         data_path = data_path.joinpath('data', 'beops_papers.csv')

@@ -170,7 +170,7 @@ cython_debug/
 /notebooks/test.csv
 /notebooks/test.ipynb
 /old_requirements/
-/src/.streamlit/secrets.toml
+/.streamlit/secrets.toml
 app_flow.xlsx
 pyproject.toml
 poetry.lock
