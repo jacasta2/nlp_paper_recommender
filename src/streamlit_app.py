@@ -84,7 +84,7 @@ if st.button("Run"):
     # This retrives a dictionary whose first key, 'matches', contains a list. The
     # elements of this list each contains one paper's info pulled from the vector
     # database, where this info is stored in a dictionary
-    query_results = pinecone_index.query(query, top_k=10, include_metadata=True)
+    query_results = pinecone_index.query(vector=query, top_k=10, include_metadata=True)
 
     st.write("The 10 papers with the most similar abstracts to your input are:")
 

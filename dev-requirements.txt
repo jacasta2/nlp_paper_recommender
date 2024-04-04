@@ -1,6 +1,2 @@
 ipykernel
 ipywidgets
-black
-#mypy
-pylint
-ruff

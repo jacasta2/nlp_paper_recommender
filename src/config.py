@@ -13,7 +13,6 @@ class Config:
 
     def __init__(self):
         self.pinecone_api_key = None
-        self.pinecone_environment = None
         self.pinecone_table = None
 
 
@@ -23,5 +22,4 @@ class Config:
         """
 
         self.pinecone_api_key = st.secrets['PINECONE_API_KEY']
-        self.pinecone_environment = st.secrets['PINECONE_ENVIRONMENT']
         self.pinecone_table = st.secrets['PINECONE_TABLE']
