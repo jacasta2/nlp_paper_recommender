@@ -85,7 +85,6 @@ I use Streamlit Secrets Management (SSM) to manage credential data. When using S
 
 ```toml
 PINECONE_API_KEY = "PINECONE_API_KEY"
-PINECONE_ENVIRONMENT = "PINECONE_ENVIRONMENT"
 PINECONE_TABLE = "PINECONE_TABLE"
 ```
 
